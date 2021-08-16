@@ -9,6 +9,6 @@ branches:
   - master
 deploy:
   provider: heroku
-  app: shop-steam
+  app: "shop-steam"
   api_key:
     secure: "DLTSfp7H8ocFqY3iZFjyJ0JH81hghV4h+zgj2NDFga9ALpH/BUSlAaG9+BZeviMxEzHBQnVG6daV4kg8AXAc7mlKOpJ5Gb+Hu+/EQB7Y9p13hWkf3ZaEL4FVIl+l4DtGzAxkpsiHlHklQwuFycHJYPohUfrrkmdEkx5ScvlgjhFT2j9iTrX7vBO3kWJyRBFSj2M0cWvKpEq5sBS2+18i9y8uSUDy0PcF5mwSesnEcuOVgET+qa44CuHE9TrKN0+BmiqPuDL4P3ZtRasB0cdx3y37IRhYfrW+o1XiFblZuvl1hdAku/LlHxn6VeerKy6KSiJH+0mdAPiK1fMc8uKCsxxJkI+VIkErYlEAC5J79qjcyMnH98rQCCZA3P7KwKLuwSJUcngQ1di8AxwCdzmSAyXseLabDTWZt7LOcrtgFsFCkeAt62z8kL9gCK/QuU3+PU/HR9ZO+zV6LAQ2PDbza5BOe3afrxZ7Oz3aQ6vfjRbsryjkXjb5AnP4UAX3dQS9AO3YXMfQquwGIBSWbqYszlLsg3emFdYWinPXQUt7PGkDZJJ6mPxf0QifzrGf158zUUDpfguPlVQLRyDSS3lbiR5KJMm+2wn+0CsTGFQ4jIslb5EwVZcvPQ+iJ/Sl3k9L8xr2KGmxIS2wxD9eUmhwo/FR/1iKe5NDT0XJmL8VCj0="

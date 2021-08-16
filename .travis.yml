@@ -11,7 +11,5 @@ deploy:
   provider: heroku
   api_key:
     secure: iWlVvu4KkDe5hmbZxcZ5dv+QeXE9yp80WgTx9CWN/7/LuXlLkGPnPi3tCMeckyO7RIg2ZhRIwmubP28m9AUMucm3ojM8OnRmc5wR98+LUn+hagKjJnRQdPNcoc3HiMyY9SKF5F05jPSg/xgc7ZL7uu7VfQY3viUVOBYaCctPCeGNlJSAUi6YTY/LoVBmfKvyvgYIO52rCEiRUEeZ9SXyKkRx3o1BnQAQaAHX9Tr4Yhxm4k9CMBMgUsol7y9jVgsn4U6SAtldJ/ycVcx4ZeeMD9JhcPtxAZOHZzNvA2VoVoYVyG67bZciGz67FkLQOAWFndaemjRzkf0y+xbaQnzq+Z7nYAHDyL/FplK+BGWMgVJjdAj9Cv3TAi34lV0yYDKbR2nwSMqnJzVkKChKafLMSNMyabrlnhXo4gWAGgVmygwftTSEH/SBw7CXJsfjDx4B1u02r9lbHA89k/fxJY6XWBDjZPrtXz8Ij/tF5/amMWsNlutogLaffoP8cSVEQtQd6iETEwZ458pteVKiTxjp+vXUhWKdzg2b1PH5d7tTOU2ixstUo1hXndI1qB4DJX47zX5c+hmwfRZANyJsOKAc/p0WakRCHUDMzlB90YgG2/YnxzcqzOOb7ojzO18SszRmLDCEhTqdDmcoOctC47+x113NOVkSm6KZKzaqt2Duntg=
-  app: angular-final-project
-  on:
-    repo: s-iklenko/angular-final-project
-  skip_cleanup: 'true'
+  app: shop-steam
+

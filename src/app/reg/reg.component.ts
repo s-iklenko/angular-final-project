@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// export interface regForm {
-//   name: string
-//   login: string
-//   email: string
-//   password: string | number
-// }
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-reg',
@@ -15,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 
 export class RegComponent implements OnInit {
 
+  form: FormGroup
+
   constructor() { }
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      name: new FormControl(''),
+      login: new FormControl(''),
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required
+      ]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(8)
+      ])
+    })
   }
-
+  userReg() {
+    const formData = {...this.form.value}
+    console.log(formData)
+  }
 }

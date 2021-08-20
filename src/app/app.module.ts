@@ -12,7 +12,9 @@ import { FriendsComponent } from './friends/friends.component';
 import { GamesComponent } from './games/games.component';
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CheckFormService } from './check-form.service'
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { CardsComponent } from './cards/cards.component';
 
 const appRoute: Routes =[
   {path:'', component: GamesComponent},
@@ -21,7 +23,7 @@ const appRoute: Routes =[
   {path:'profile', component: ProfileComponent},
   {path:'auth', component: AuthComponent},
   {path:'reg', component: RegComponent}
-]
+];
 
 @NgModule({
   declarations: [
@@ -32,16 +34,19 @@ const appRoute: Routes =[
     ProfileComponent,
     LibraryComponent,
     FriendsComponent,
-    GamesComponent
+    GamesComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule
   ],
-  providers: [CheckFormService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

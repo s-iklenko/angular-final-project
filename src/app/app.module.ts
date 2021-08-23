@@ -15,9 +15,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { CardsComponent } from './cards/cards.component';
+import { FriendItemComponent } from './friend-item/friend-item.component';
+import { AuthService } from "./auth.service";
+import { HttpClientModule } from '@angular/common/http';
+import { GamesService } from "./games.service";
+
 
 const appRoute: Routes =[
-  {path:'', component: GamesComponent},
+  {path:'games', component: GamesComponent},
   {path:'library', component: LibraryComponent},
   {path:'friends', component: FriendsComponent},
   {path:'profile', component: ProfileComponent},
@@ -35,7 +40,8 @@ const appRoute: Routes =[
     LibraryComponent,
     FriendsComponent,
     GamesComponent,
-    CardsComponent
+    CardsComponent,
+    FriendItemComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +50,10 @@ const appRoute: Routes =[
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

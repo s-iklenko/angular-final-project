@@ -1,1 +1,8 @@
-<p>profile works!</p>
+<form [formGroup]="form" (ngSubmit)="saveProfile()">
+  <p>Profile</p>
+  <input type="text" placeholder="username" class="form-control" formControlName="username"><br>
+  <input type="email" placeholder="email" class="form-control" formControlName="email"><br>
+  <input type="text" placeholder="age" class="form-control" formControlName="age"><br>
+  <button class="btn btn-success" type="submit">Save</button>
+</form>
+

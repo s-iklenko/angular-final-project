@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CardGame} from "../games/games.component";
 
-
-
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',

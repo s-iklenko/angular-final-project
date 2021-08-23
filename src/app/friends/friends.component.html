@@ -1,1 +1,17 @@
-<p>friends works!</p>
+<h3>Friends</h3>
+<form action="" class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="Search" placeholder="Search..." class="form-control" />
+    <div class="input-group-btn">
+      <button class="btn btn-info">
+        <span class="glyphicon glyphicon-search">SEARCH</span>
+      </button>
+    </div>
+  </div>
+</form>
+<h3>My Friends</h3>
+
+<app-friend-item
+  *ngFor="let fr of friends"
+  [friend]="fr"
+></app-friend-item>

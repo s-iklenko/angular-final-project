@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GamesService} from "../games.service";
+import {GamesService} from "../Services/games.service";
 
 
 export interface CardGame{

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FriendsService} from "../friends.service";
+import {FriendsService} from "../Services/friends.service";
 
 export interface Friend{
   title: string

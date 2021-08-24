@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { AuthService } from "../auth.service";
+import { AuthService } from "../Services/auth.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -33,9 +33,6 @@ export class RegComponent implements OnInit {
     })
   }
   userReg() {
-    const formData = {...this.form.value}
-    console.log(formData)
 
-    this.authService.regUser(formData)
   }
 }

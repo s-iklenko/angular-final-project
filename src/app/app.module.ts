@@ -16,9 +16,10 @@ import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { CardsComponent } from './cards/cards.component';
 import { FriendItemComponent } from './friend-item/friend-item.component';
-import { AuthService } from "./auth.service";
+import { AuthService } from "./Services/auth.service";
 import { HttpClientModule } from '@angular/common/http';
-import { GamesService } from "./games.service";
+import { GamesService } from "./Services/games.service";
+import { FriendsService } from "./Services/friends.service";
 
 
 const appRoute: Routes =[
@@ -53,7 +54,7 @@ const appRoute: Routes =[
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [AuthService, GamesService],
+  providers: [AuthService, GamesService, FriendsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

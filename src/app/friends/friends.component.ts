@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FriendsService} from "../friends.service";
 
 export interface Friend{
   title: string
@@ -11,19 +12,24 @@ export interface Friend{
 })
 export class FriendsComponent implements OnInit {
 
-  friends: Friend[] = [
-    {title: 'Alex'},
-    {title: 'Killer'},
-    {title: 'Domino'},
-    {title: 'Cheeps'},
-    {title: 'Bomber'},
-    {title: 'Belizard'},
-    {title: 'Oxonomy'},
-  ]
+  // friends: Friend[] = [
+  //   {title: 'Alex'},
+  //   {title: 'Killer'},
+  //   {title: 'Domino'},
+  //   {title: 'Cheeps'},
+  //   {title: 'Bomber'},
+  //   {title: 'Belizard'},
+  //   {title: 'Oxonomy'},
+  // ]
+  public friends: Friend[] = [];
 
-  constructor() { }
+  constructor(
+    private readonly friendsService: FriendsService
+  ) { }
 
   ngOnInit(): void {
+    const response = this.friendsService.getFriends$('user/friends');
+    response.subscribe(date => this.friends = date)
   }
 
 }

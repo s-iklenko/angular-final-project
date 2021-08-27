@@ -20,6 +20,10 @@ import { AuthService } from "./Services/auth.service";
 import { HttpClientModule } from '@angular/common/http';
 import { GamesService } from "./Services/games.service";
 import { FriendsService } from "./Services/friends.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from "@angular/material/grid-list";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatSliderModule} from "@angular/material/slider";
 
 
 const appRoute: Routes =[
@@ -52,7 +56,11 @@ const appRoute: Routes =[
     ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCheckboxModule,
+    MatSliderModule
   ],
   providers: [AuthService, GamesService, FriendsService],
   bootstrap: [AppComponent]

@@ -34,7 +34,7 @@ export class AuthComponent implements OnInit {
     this.authService.submitForm(this.form.value)
       .subscribe(
         (data) => {
-          console.log('Form submitted successfully');
+          console.log('Form submitted successfully', data);
         },
         (error: HttpErrorResponse) => {
           console.log(error);

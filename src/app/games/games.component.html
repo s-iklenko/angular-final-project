@@ -1,8 +1,28 @@
-<div class="container">
-  <div class="row">
+<div class="container card" id="game-page">
+  <div class="row" >
     <app-cards class="col-4"
       *ngFor="let card of cards"
       [card]="card"
     ></app-cards>
   </div>
+  <div class="checkbox">
+    <section class="progressbar">
+      <label>Filter by price:</label>
+      <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="1"
+        step="1"
+        min="0"
+        max="100"
+        aria-label="units"></mat-slider>
+    </section>
+    <section>
+      <h4>Filter for genre games:</h4>
+      <p><mat-checkbox [ngModel]="action" (ngModelChange)="onActionChange($event)">Action</mat-checkbox></p>
+      <p><mat-checkbox [ngModel]="rpg" (ngModelChange)="onRpgChange($event)">RPG</mat-checkbox></p>
+      <p><mat-checkbox [ngModel]="adventure" (ngModelChange)="onAdventureChange($event)">Adventure</mat-checkbox></p>
+    </section>
+  </div>
 </div>
+

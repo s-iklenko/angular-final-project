@@ -16,17 +16,18 @@ import { FriendItemComponent } from './friend-item/friend-item.component';
 import { AuthService } from "./Services/auth.service";
 import { GamesService } from "./Services/games.service";
 import { FriendsService } from "./Services/friends.service";
+import { ProfileService } from "./Services/profile.service"
 
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSliderModule } from "@angular/material/slider";
-import {ApiInterceptor} from "./Interceptor/api.interceptor";
+import { ApiInterceptor } from "./Interceptor/api.interceptor";
 
 const appRoute: Routes =[
   {path:'games', component: GamesComponent},
@@ -64,7 +65,7 @@ const appRoute: Routes =[
     MatCheckboxModule,
     MatSliderModule,
  ],
-  providers: [AuthService, GamesService, FriendsService,
+  providers: [AuthService, GamesService, FriendsService, ProfileService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptor,

@@ -13,9 +13,7 @@ export class FriendsService {
     private readonly http: HttpClient
   ) {
   }
-  getToken(){
-    return localStorage.getItem('jwt_token')
-  }
+
   public getFriends$(url: string): Observable<Friend[]> {
 
     return this.http.get<Friend[]>(`http://localhost:8080/${url}`)

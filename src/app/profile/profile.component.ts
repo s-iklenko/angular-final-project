@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {ProfileService} from "../Services/profile.service";
+import {HttpErrorResponse} from "@angular/common/http";
+
+export interface Profile {
+  username: string
+  email: string
+  age: number
+}
 
 @Component({
   selector: 'app-profile',
@@ -8,11 +16,21 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class ProfileComponent implements OnInit {
 
-  form: FormGroup
+  form: FormGroup;
+  // public profile: Profile[];
 
-  constructor() { }
+  @Input() profile: Profile
+
+  constructor(
+    private readonly profileService: ProfileService,
+  ) { }
 
   ngOnInit(): void {
+    this.updateForm()
+    const response = this.profileService.getProfile$('user/profile');
+    response.subscribe(date => this.profile = date);
+  }
+  updateForm(){
     this.form = new FormGroup({
       username: new FormControl(''),
       email: new FormControl(''),
@@ -21,7 +39,13 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile() {
-    const formData = {...this.form.value}
-    console.log(formData)
+    this.profileService.updateProfile(this.form.value)
+      .subscribe((data) => {
+        console.log(data)
+      },
+        (error: HttpErrorResponse) => {
+          console.log(error);
+        }
+      )
   }
 }

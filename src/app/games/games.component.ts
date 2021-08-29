@@ -4,7 +4,7 @@ import {GamesService} from "../Services/games.service";
 
 export interface CardGame{
   title: string
-  subtitle: string[]
+  subtitle: string
   img: string
   description: string
   price: number
@@ -24,7 +24,9 @@ export class GamesComponent implements OnInit {
   rpg = false;
   adventure = false;
 
-  constructor(private readonly gamesService: GamesService) {}
+  constructor(
+    private readonly gamesService: GamesService
+  ) {}
 
   ngOnInit(): void {
     const response = this.gamesService.getGames$('api/games');

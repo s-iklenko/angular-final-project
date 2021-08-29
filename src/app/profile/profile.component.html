@@ -1,8 +1,8 @@
 <form [formGroup]="form" (ngSubmit)="saveProfile()">
   <p>Profile</p>
-  <input type="text" placeholder="username" class="form-control" formControlName="username"><br>
-  <input type="email" placeholder="email" class="form-control" formControlName="email"><br>
-  <input type="text" placeholder="age" class="form-control" formControlName="age"><br>
+  <input type="text" placeholder="{{profile.username}}" class="form-control" formControlName="username" ><br>
+  <input type="email" placeholder="{{profile.email}}" class="form-control" formControlName="email" readonly><br>
+  <input type="text" placeholder="{{profile.age}}" class="form-control" formControlName="age" ><br>
   <button class="btn btn-success" type="submit">Save</button>
 </form>
 

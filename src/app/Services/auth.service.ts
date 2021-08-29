@@ -21,6 +21,9 @@ export class AuthService {
     this.token = token;
     console.log(this.token = token)
   }
+  getToken(){
+    return localStorage.getItem('jwt_token')
+  }
 
 }
 

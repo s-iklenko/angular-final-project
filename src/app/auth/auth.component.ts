@@ -4,11 +4,6 @@ import {AuthService} from "../Services/auth.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
 
-interface Token {
-  jwt_token: string,
-  message: string
-}
-
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',

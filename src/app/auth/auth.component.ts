@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../Services/auth.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {Router} from "@angular/router";
+
+interface Token {
+  jwt_token: string,
+  message: string
+}
 
 @Component({
   selector: 'app-auth',
@@ -13,7 +19,8 @@ export class AuthComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    public readonly authService: AuthService
+    private readonly authService: AuthService,
+    private readonly router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +41,9 @@ export class AuthComponent implements OnInit {
     this.authService.submitForm(this.form.value)
       .subscribe(
         (data) => {
-          console.log('Form submitted successfully', data);
+          console.log("User is logged in");
+          this.router.navigate(['profile']);
+          this.authService.storeUser(data);
         },
         (error: HttpErrorResponse) => {
           console.log(error);

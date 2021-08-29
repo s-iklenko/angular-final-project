@@ -10,21 +10,23 @@ import { ProfileComponent } from './profile/profile.component';
 import { LibraryComponent } from './library/library.component';
 import { FriendsComponent } from './friends/friends.component';
 import { GamesComponent } from './games/games.component';
+import { CardsComponent } from './cards/cards.component';
+import { FriendItemComponent } from './friend-item/friend-item.component';
+
+import { AuthService } from "./Services/auth.service";
+import { GamesService } from "./Services/games.service";
+import { FriendsService } from "./Services/friends.service";
+
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import { CardsComponent } from './cards/cards.component';
-import { FriendItemComponent } from './friend-item/friend-item.component';
-import { AuthService } from "./Services/auth.service";
-import { HttpClientModule } from '@angular/common/http';
-import { GamesService } from "./Services/games.service";
-import { FriendsService } from "./Services/friends.service";
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from "@angular/material/grid-list";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatSliderModule} from "@angular/material/slider";
-
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatSliderModule } from "@angular/material/slider";
+import {ApiInterceptor} from "./Interceptor/api.interceptor";
 
 const appRoute: Routes =[
   {path:'games', component: GamesComponent},
@@ -60,9 +62,14 @@ const appRoute: Routes =[
     BrowserAnimationsModule,
     MatGridListModule,
     MatCheckboxModule,
-    MatSliderModule
-  ],
-  providers: [AuthService, GamesService, FriendsService],
+    MatSliderModule,
+ ],
+  providers: [AuthService, GamesService, FriendsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

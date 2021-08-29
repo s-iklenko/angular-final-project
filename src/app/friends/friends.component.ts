@@ -12,16 +12,16 @@ export interface Friend{
 })
 export class FriendsComponent implements OnInit {
 
-  friends: Friend[] = [
-    {title: 'Alex'},
-    {title: 'Killer'},
-    {title: 'Domino'},
-    {title: 'Cheeps'},
-    {title: 'Bomber'},
-    {title: 'Belizard'},
-    {title: 'Oxonomy'},
-  ]
-  // public friends: Friend[] = [];
+  // friends: Friend[] = [
+  //   {title: 'Alex'},
+  //   {title: 'Killer'},
+  //   {title: 'Domino'},
+  //   {title: 'Cheeps'},
+  //   {title: 'Bomber'},
+  //   {title: 'Belizard'},
+  //   {title: 'Oxonomy'},
+  // ]
+  public friends: Friend[] = [];
 
   constructor(
     private readonly friendsService: FriendsService

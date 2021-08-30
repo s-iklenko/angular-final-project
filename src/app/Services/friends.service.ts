@@ -19,4 +19,9 @@ export class FriendsService {
     return this.http.get<Friend[]>(`http://localhost:8080/${url}`)
 
   }
+
+  public deleteFriendId$(url: string): Observable<Friend[]> {
+    return this.http.delete<Friend[]>(`http://localhost:8080/${url}`);
+  }
+
 }

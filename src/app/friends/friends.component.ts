@@ -3,6 +3,7 @@ import {FriendsService} from "../Services/friends.service";
 
 export interface Friend{
   title: string
+  _id: string
 }
 
 @Component({
@@ -31,5 +32,7 @@ export class FriendsComponent implements OnInit {
     const response = this.friendsService.getFriends$('user/friends');
     response.subscribe(date => this.friends = date)
   }
+
+
 
 }

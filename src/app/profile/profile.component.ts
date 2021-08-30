@@ -17,7 +17,6 @@ export interface Profile {
 export class ProfileComponent implements OnInit {
 
   form: FormGroup;
-  // public profile: Profile[];
 
   @Input() profile: Profile
 
@@ -30,6 +29,7 @@ export class ProfileComponent implements OnInit {
     const response = this.profileService.getProfile$('user/profile');
     response.subscribe(date => this.profile = date);
   }
+
   updateForm(){
     this.form = new FormGroup({
       username: new FormControl(''),

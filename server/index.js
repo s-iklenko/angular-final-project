@@ -13,7 +13,7 @@ const {friendRouter} = require('./src/controllers/friendsController');
 const {authMiddleware} = require('./src/middlewares/authMiddleware');
 const {NodeCourseError} = require('./src/utils/errors');
 
-app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors());
 // app.use(cors({origin: 'https://shop-steam.herokuapp.com/'}));
 app.use(express.json());
 app.use(morgan("tiny"));

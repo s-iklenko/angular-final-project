@@ -5,9 +5,9 @@ before_install:
 - npm install -g @angular/cli
 install:
 - npm install
-#- cd app-back
-#- npm install
-#- cd ..
+- cd server
+- npm install
+- cd ..
 branches:
   only:
   - master

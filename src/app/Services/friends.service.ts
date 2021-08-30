@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Friend } from "../friends/friends.component";
+import { baseURL } from "../shop-steam";
 
 
 @Injectable({
@@ -16,12 +17,12 @@ export class FriendsService {
 
   public getFriends$(url: string): Observable<Friend[]> {
 
-    return this.http.get<Friend[]>(`http://localhost:8080/${url}`)
+    return this.http.get<Friend[]>(`${baseURL}${url}`)
 
   }
 
   public deleteFriendId$(url: string): Observable<Friend[]> {
-    return this.http.delete<Friend[]>(`http://localhost:8080/${url}`);
+    return this.http.delete<Friend[]>(`${baseURL}${url}`);
   }
 
 }

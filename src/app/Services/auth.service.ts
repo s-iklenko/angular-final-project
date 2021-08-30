@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
+import { baseURL } from "../shop-steam";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
   ) { }
 
   submitForm(date: string): Observable<string> {
-    return this.http.post<string>(`http://localhost:8080/api/auth`, date);
+    return this.http.post<string>(`${baseURL}api/auth`, date);
   }
   storeUser(token: any){
     localStorage.setItem('jwt_token', token)

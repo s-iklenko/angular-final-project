@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require('mongoose');
@@ -12,7 +13,8 @@ const {friendRouter} = require('./src/controllers/friendsController');
 const {authMiddleware} = require('./src/middlewares/authMiddleware');
 const {NodeCourseError} = require('./src/utils/errors');
 
-app.use(cors({origin: 'http://localhost:4200'}));
+// app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors({origin: 'https://shop-steam.herokuapp.com/'}));
 app.use(express.json());
 app.use(morgan("tiny"));
 

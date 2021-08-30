@@ -4,16 +4,15 @@ node_js:
 before_install:
 - npm install -g @angular/cli
 install:
-  - npm install
-  - cd app-back
-  - npm install
-  - cd ..
+- npm install
+- cd app-back
+- npm install
+- cd ..
 branches:
   only:
   - master
 deploy:
   provider: heroku
   api_key:
-    secure: iWlVvu4KkDe5hmbZxcZ5dv+QeXE9yp80WgTx9CWN/7/LuXlLkGPnPi3tCMeckyO7RIg2ZhRIwmubP28m9AUMucm3ojM8OnRmc5wR98+LUn+hagKjJnRQdPNcoc3HiMyY9SKF5F05jPSg/xgc7ZL7uu7VfQY3viUVOBYaCctPCeGNlJSAUi6YTY/LoVBmfKvyvgYIO52rCEiRUEeZ9SXyKkRx3o1BnQAQaAHX9Tr4Yhxm4k9CMBMgUsol7y9jVgsn4U6SAtldJ/ycVcx4ZeeMD9JhcPtxAZOHZzNvA2VoVoYVyG67bZciGz67FkLQOAWFndaemjRzkf0y+xbaQnzq+Z7nYAHDyL/FplK+BGWMgVJjdAj9Cv3TAi34lV0yYDKbR2nwSMqnJzVkKChKafLMSNMyabrlnhXo4gWAGgVmygwftTSEH/SBw7CXJsfjDx4B1u02r9lbHA89k/fxJY6XWBDjZPrtXz8Ij/tF5/amMWsNlutogLaffoP8cSVEQtQd6iETEwZ458pteVKiTxjp+vXUhWKdzg2b1PH5d7tTOU2ixstUo1hXndI1qB4DJX47zX5c+hmwfRZANyJsOKAc/p0WakRCHUDMzlB90YgG2/YnxzcqzOOb7ojzO18SszRmLDCEhTqdDmcoOctC47+x113NOVkSm6KZKzaqt2Duntg=
+    secure: YvdneCUEp6agDW7slE7XWbrIKPiN3sBVuIzkF41ORBJLKTdQmDk/UT1wvKz6b8EK86tjk5oT4K9BXJs+nVeKB9BO3eZr8YAUP3GB7TqSMwOKi7fEoMT6viCB8M+IWmu9yJcvmTsv1l4oMmhJZTxlW6Oqb/NzYzo/vEp4Gsc2SCso4Ot7cnJHJ5ldCchFHT+A4Nm5nY1uT/c6MQHGgGpwa63kR6lkV9JkNor+kkx+74p1lDvHDmuKeYEfJ40Ls+IqciS8U8pja2kTt8+AekjY/0Z8NmXkuSDQzdXx2HHY5Mh+QouNp5Hqp1ZpFxhsFamQPUBb+iIatxTm4kfYjfL3JD38m7IaK04OFXTF6PXYCprNFhDghcs8XIl9tVrqSrA8M8v3oikQGKsjEZCL8ykbSAShjbi0TQsnRn4ctiDVjwQfzOl3EMZaRXwwzCT7fX8hcrau95ESYcq+vvU62KZNu94BMGyHHn/5tPAfGm1CcECc7zZ3CEMuTJFRoiuis9JfbSjZRAJWhfKlJkfhtSHG8l6nBsasYFCK+dJJSvfK/WTm5nBnv6ciwLrRrjQ0JSfcDsIkcHMuFV7MG9FEK0Vge0tey736aVvMhRda6jbF+oVf89VRHRcVGlsjunT7sPIHVkDr82ZlOGHZTGnoPDXZxdqxIfidnp9tYx+ZC5qrEl4=
   app: shop-steam
-

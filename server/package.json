@@ -1,5 +1,5 @@
 {
-  "name": "app-back",
+  "name": "server",
   "version": "1.0.0",
   "description": "steam-shop",
   "main": "index.js",

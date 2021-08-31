@@ -24,7 +24,7 @@ app.use('/user', [authMiddleware], usersRouter);
 app.use('/user', [authMiddleware], friendRouter);
 
 app.get('*',(req, res) =>{
-  res.sendFile(path.join(__dirname + './../dist/angular-final-project/index.html'));
+  res.sendFile(path.join(__dirname + '/../dist/angular-final-project/index.html'));
 })
 
 app.use((req, res, next) => {

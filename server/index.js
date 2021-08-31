@@ -4,7 +4,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require('mongoose');
 const app = express();
-const envConfig = require('dotenv').config().parsed;
+// const envConfig = require('dotenv').config().parsed;
 
 const {usersRouter} = require('./src/controllers/usersController');
 const {authRouter} = require("./src/controllers/authController");
@@ -49,7 +49,7 @@ const start = async () => {
             useNewUrlParser: true, useUnifiedTopology: true
         });
 
-        app.listen(envConfig.DB_PORT);
+        app.listen(process.env.PORT || 8080);
     } catch (err) {
         console.error(`Error on server startup: ${err.message}`)
     }

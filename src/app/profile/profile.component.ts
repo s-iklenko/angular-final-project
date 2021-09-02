@@ -41,7 +41,8 @@ export class ProfileComponent implements OnInit {
   saveProfile() {
     this.profileService.updateProfile(this.form.value)
       .subscribe((data) => {
-        console.log(data)
+          console.log(data)
+          window.location.reload();
       },
         (error: HttpErrorResponse) => {
           console.log(error);

@@ -1,7 +1,13 @@
+<form action="" class="navbar-form navbar-right">
+  <div class="input-group">
+    <input type="search" name="text" [(ngModel)]="searchText" placeholder="Search..." class="form-control" />
+  </div>
+</form>
+
 <div class="container card" id="game-page">
   <div class="row" >
     <app-cards class="col-4"
-      *ngFor="let card of cards"
+      *ngFor="let card of cards | filter: searchText"
       [card]="card"
     ></app-cards>
   </div>

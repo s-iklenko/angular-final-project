@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {GamesService} from "../Services/games.service";
-
 
 export interface CardGame{
   title: string
@@ -8,7 +7,7 @@ export interface CardGame{
   img: string
   description: string
   price: number
-  id?: number
+  _id?: string
 }
 
 @Component({
@@ -19,6 +18,7 @@ export interface CardGame{
 export class GamesComponent implements OnInit {
 
   public cards: CardGame[] = [];
+  searchText: any;
 
   action = false;
   rpg = false;
@@ -70,4 +70,5 @@ export class GamesComponent implements OnInit {
     }
     return value;
   }
+
 }

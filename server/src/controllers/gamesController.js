@@ -21,6 +21,21 @@ router.get(
   })
 );
 
+// router.get(
+//   "/games/:id",
+//   asyncWrapper(async (req, res) => {
+//     // const {userId} = req.user;
+//     const {id} = req.params;
+//     const games = await getGamesID(id);
+
+//     if (!games) {
+//       throw new InvalidRequestError('No game with such id found!');
+//     }
+
+//     res.json(games);
+//   })
+// );
+
 router.get(
   "/games/action",
   asyncWrapper(async (req, res) => {
@@ -32,7 +47,7 @@ router.get(
 router.get(
   "/games/rpg",
   asyncWrapper(async (req, res) => {
-    
+
     const games = await getGamesRPG(req.body);
 
     res.json(games);

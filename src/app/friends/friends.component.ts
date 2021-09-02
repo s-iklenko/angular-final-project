@@ -22,17 +22,18 @@ export class FriendsComponent implements OnInit {
   //   {title: 'Belizard'},
   //   {title: 'Oxonomy'},
   // ]
+
   public friends: Friend[] = [];
+  searchText: any;
 
   constructor(
-    private readonly friendsService: FriendsService
+    private readonly friendsService: FriendsService,
   ) { }
 
   ngOnInit(): void {
-    const response = this.friendsService.getFriends$('user/friends');
-    response.subscribe(date => this.friends = date)
+    this.friendsService.getFriends$('user/friends').subscribe(data => {
+      this.friends = data;
+    })
   }
-
-
 
 }

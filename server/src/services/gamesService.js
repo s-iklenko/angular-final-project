@@ -1,11 +1,34 @@
 const {GameCard} = require('../models/gameModel');
+const {myGameCard} = require("../models/myGameModel");
 
 const getGames = async () => {
 
-    const games = await GameCard.find({});
+    const games = await GameCard.find();
     return games;
 
 }
+
+// const getGamesID = async (gameId) => {
+
+//   let copy = GameCard.findOne({},{gameId});
+//   for (let i = 0; i< 30; i++){
+//     await myGameCard.insertMany(copy);
+//   }
+
+  // GameCard.find(gameId).forEach( function(doc){myGameCard.insertMany(
+  //   {
+  //     "title":doc.title,
+  //     "subtitle":doc.subtitle,
+  //     "img":doc.img,
+  //     "description":doc.description,
+  //     "price":doc.price,
+  //   }
+  // )} );
+  // const myGame = new myGameCard(copy);
+  // await myGame.save();
+  // return copy
+
+//}
 
 const getGamesAction = async () => {
 
@@ -32,7 +55,7 @@ const addGame = async ({title, subtitle, img, description, price}) => {
 
 
 module.exports = {
-    getGames, 
+    getGames,
     addGame,
     getGamesAction,
     getGamesRPG,

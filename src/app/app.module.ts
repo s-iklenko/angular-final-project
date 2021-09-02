@@ -28,6 +28,8 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSliderModule } from "@angular/material/slider";
 import { ApiInterceptor } from "./Interceptor/api.interceptor";
+import { FilterPipe } from './filter/filter.pipe';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 const appRoute: Routes =[
   {path:'games', component: GamesComponent},
@@ -49,22 +51,24 @@ const appRoute: Routes =[
     FriendsComponent,
     GamesComponent,
     CardsComponent,
-    FriendItemComponent
+    FriendItemComponent,
+    FilterPipe
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(appRoute),
-    FormsModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatButtonModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatCheckboxModule,
-    MatSliderModule,
- ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule.forRoot(appRoute),
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatButtonModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatGridListModule,
+        MatCheckboxModule,
+        MatSliderModule,
+        Ng2SearchPipeModule,
+    ],
   providers: [AuthService, GamesService, FriendsService, ProfileService,
     {
       provide: HTTP_INTERCEPTORS,

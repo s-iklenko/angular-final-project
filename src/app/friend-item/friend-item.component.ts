@@ -12,14 +12,17 @@ export class FriendItemComponent implements OnInit {
   @Input() friend: Friend
 
   constructor(
-    private readonly friendsService: FriendsService
+    private readonly friendsService: FriendsService,
   ) { }
 
   ngOnInit(): void {
   }
   deleteItem(){
-    const response = this.friendsService.deleteFriendId$(`user/${this.friend._id}`);
-    response.subscribe((data) => {console.log(data)})
+    this.friendsService.deleteFriendId$(`user/${this.friend._id}`)
+      .subscribe((data) => {
+        console.log(data);
+        window.location.reload();
+    })
   }
 
 }

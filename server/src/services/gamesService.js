@@ -8,28 +8,6 @@ const getGames = async () => {
 
 }
 
-// const getGamesID = async (gameId) => {
-
-//   let copy = GameCard.findOne({},{gameId});
-//   for (let i = 0; i< 30; i++){
-//     await myGameCard.insertMany(copy);
-//   }
-
-  // GameCard.find(gameId).forEach( function(doc){myGameCard.insertMany(
-  //   {
-  //     "title":doc.title,
-  //     "subtitle":doc.subtitle,
-  //     "img":doc.img,
-  //     "description":doc.description,
-  //     "price":doc.price,
-  //   }
-  // )} );
-  // const myGame = new myGameCard(copy);
-  // await myGame.save();
-  // return copy
-
-//}
-
 const getGamesAction = async () => {
 
     const games = await GameCard.find({subtitle: 'Action'});

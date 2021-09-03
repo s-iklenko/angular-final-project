@@ -9,21 +9,31 @@ import { baseURL } from "../shop-steam";
 export class AuthService {
 
   token: any
+  user: any
 
   constructor(
     private readonly http: HttpClient
   ) { }
 
-  submitForm(date: string): Observable<string> {
-    return this.http.post<string>(`${baseURL}api/auth`, date);
+  submitReg(data: string): Observable<string>{
+    return this.http.post<string>(`${baseURL}api/reg`, data);
   }
-  storeUser(token: any){
-    localStorage.setItem('jwt_token', token)
+
+  submitAuth(data: string): Observable<string> {
+    return this.http.post<string>(`${baseURL}api/auth`, data);
+  }
+  storeUser(token: any, email: any){
+    localStorage.setItem('jwt_token', token);
+    localStorage.setItem('email', email);
     this.token = token;
-    console.log(this.token = token)
+    this.user = email;
   }
   getToken(){
-    return localStorage.getItem('jwt_token')
+    return localStorage.getItem('jwt_token');
+  }
+  logout(){
+    this.token = null;
+    localStorage.clear();
   }
 
 }

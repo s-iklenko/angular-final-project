@@ -3,8 +3,9 @@ const jwt = require('jsonwebtoken');
 
 const {User} = require('../models/userModel');
 
-const registration = async ({email, password}) => {
+const registration = async (username, email, password) => {
     const user = new User({
+        username,
         email,
         password: await bcrypt.hash(password,10)
     })
@@ -26,7 +27,8 @@ const signIn = async ({email, password}) => {
         _id: user._id,
         email: user.email
     }, 'secret');
-    return token;
+
+    return {token, user};
 }
 
 module.exports = {

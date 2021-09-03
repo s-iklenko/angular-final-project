@@ -7,11 +7,12 @@ const {registrationValidator} = require('../middlewares/validationMidlleware');
 
 router.post('/reg', registrationValidator, asyncWrapper(async (req, res) => {
     const {
+        username,
         email,
         password
     } = req.body;
 
-    await registration({email, password});
+    await registration(username, email, password);
 
     res.json({message: 'Account created successfully'});
 }));

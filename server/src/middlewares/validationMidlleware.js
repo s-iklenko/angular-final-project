@@ -2,6 +2,8 @@ const Joi = require("joi");
 
 const registrationValidator = async (req, res, next) => {
   const schema = Joi.object({
+    username: Joi
+        .string(),
     email: Joi
         .string()
         .email()

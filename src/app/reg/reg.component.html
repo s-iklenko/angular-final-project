@@ -1,7 +1,6 @@
 <form class="card" [formGroup]="form" (ngSubmit)="userReg()">
   <p>Registration</p>
-  <input type="text" placeholder="name" class="form-control" formControlName="name"><br>
-  <input type="text" placeholder="login" class="form-control" formControlName="login"><br>
+  <input type="text" placeholder="username" class="form-control" formControlName="username"><br>
   <input type="email" placeholder="email" class="form-control" formControlName="email"><br>
   <input type="password" placeholder="password" class="form-control" formControlName="password"><br>
   <button class="btn btn-success mb-2" type="submit" [disabled]="form.invalid">Registration</button>

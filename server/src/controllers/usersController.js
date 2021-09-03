@@ -20,7 +20,8 @@ router.get('/profile', asyncWrapper(async (req, res) => {
 
 router.patch('/profile', asyncWrapper(async (req, res) => {
     const {userId} = req.user;
-    const {username, age} = req.body;
+    const {username} = req.body;
+    const {age} = req.body;
 
     await changeProfile(userId, username, age);
 

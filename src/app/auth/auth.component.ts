@@ -33,12 +33,14 @@ export class AuthComponent implements OnInit {
   }
 
   userAuth(){
-    this.authService.submitForm(this.form.value)
+    this.authService.submitAuth(this.form.value)
       .subscribe(
         (data) => {
-          console.log("User is logged in");
+          const token = JSON.stringify(data, ['token']).split('"')[3];
+          const email = JSON.stringify(data, ['user', 'email']).split('"')[5];
+          // console.log("User is logged in", JSON.stringify(data, ['user', 'email']).split('"')[5]);
           this.router.navigate(['profile']);
-          this.authService.storeUser(data);
+          this.authService.storeUser(token, email);
         },
         (error: HttpErrorResponse) => {
           console.log(error);

@@ -1,0 +1,24 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span><img width="40" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png" alt=""></span>
+        <span class="fs-4 text-white">STEAM&#174;</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a [routerLink]="['/games']" class="nav-link px-2 text-white">Games</a></li>
+        <li><a [routerLink]="['/library']" class="nav-link px-2 text-white">Library</a></li>
+        <li><a [routerLink]="['/friends']" class="nav-link px-2 text-white">Friends</a></li>
+        <li><a [routerLink]="['/profile']" class="nav-link px-2 text-white">Profile</a></li>
+      </ul>
+
+      <div class="text-end">
+        <button [routerLink]="['/auth']" type="button" class="btn btn-outline-light me-2">Login</button>
+<!--        <button [routerLink]="['/auth']" type="button" class="btn btn-outline-light me-2">LogOut</button>-->
+        <button [routerLink]="['/reg']" type="button" class="btn btn-warning">Registration</button>
+      </div>
+    </div>
+  </div>
+</header>

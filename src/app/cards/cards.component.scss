@@ -1,0 +1,18 @@
+.card-game {
+  max-width: 350px;
+  margin: 1rem 1rem 0 0;
+  background-color: #e7e7e7;
+  box-sizing: border-box;
+}
+
+.header-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png');
+  background-size: cover;
+}
+
+p{
+  height: 200px;
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,24 @@
+form{
+  margin-bottom: 50px;
+}
+
+span{
+  color: white;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+
+#game-page{
+  display: grid;
+  width: 100%;
+  grid-template-areas: 'card checkbox';
+  grid-template-rows: 2fr;
+  grid-template-columns: 1fr;
+}
+.checkbox{
+  margin: 16px 16px 0 0;
+}
+.progressbar{
+  display: grid;
+}

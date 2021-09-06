@@ -37,8 +37,8 @@ export class AuthComponent implements OnInit {
       .subscribe(
         (data) => {
           const token = JSON.stringify(data, ['token']).split('"')[3];
-          const email = JSON.stringify(data, ['user', 'email']).split('"')[5];
-          // console.log("User is logged in", JSON.stringify(data, ['user', 'email']).split('"')[5]);
+          const email = JSON.stringify(data, ['email']).split('"')[3];
+          // console.log("User is logged in", JSON.stringify(data, ['email']).split('"')[3]);
           this.router.navigate(['profile']);
           this.authService.storeUser(token, email);
         },

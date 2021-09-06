@@ -9,7 +9,7 @@ const registration = async (username, email, password) => {
         email,
         password: await bcrypt.hash(password,10)
     })
-    await user.save();  
+    await user.save();
 }
 
 const signIn = async ({email, password}) => {
@@ -28,9 +28,8 @@ const signIn = async ({email, password}) => {
         email: user.email
     }, 'secret');
 
-    return {token, user};
+    return {token, email};
 }
-
 module.exports = {
     registration,
     signIn
